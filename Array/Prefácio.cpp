@@ -1,110 +1,29 @@
 #include <stdio.h>
 
-int main (void) {
-	int a,b,q=0,r=0,i=0;
+int main () {
+	int a,b,q,r,aux,aux2;
 	
 	scanf("%d %d", &a,&b);
-	while(i != a) {
-		if(a < 0 && b > 0) {
-			while(i >= a && r == 0) {
-				i = (q*b) + r; // a = -1*2 + 0 = -2
-				q--;		   // a = -2*2 + 0 = -4
-					   	   	   // a = -3*2 + 0 = -6
-			}				   // a = -3*3 + 1 = -8... -7	
-			if(i == a) {
-				break;
-			}
-			if(q < b && r == 0) {
-				q+=1;
-			}
-			r++;
-			i = (q*b) + r;
-		}else if(a > 0 && b < 0) {
-			while(i < a) {
-				i = (q*b) + r; // a = -1*-3 + 0 = 3
-				q--;		   // a = -2*-3 + 0 = 6
-					   	   	   // a = -3*-3 + 0 = 9
-			}				   // a = -3*-2 + 1 = 7	
-			if(i == a) {
-				break;
-			}
-			if(q <= b) {
-				q+=2;
-			}
-			r++;
-			i = (q*b) + r;
-			
-		}else if(a < 0 && b < 0) {
-			while(i < (a*-1)) {
-				i = (q*b) + r; 
-				q--;		  
-					   	   	   
-			}	
-			r++;
-			i = (q*b) + r;
-                               // a = -1*-3 + 0 = 3
-		if(q <= b) {
-				q+=2;
-		 }		     		   // a = -2*-3 + 0 = 6
-					   	   	   // a = -3*-3 + 0 = 9
-							   // a = -2*-3 + 1 = 7	
-		}else {
-			while(i < a) {
-				i = (q*b) + r; // a = 1*3 + 0 = 3
-				q++;		   // a = 2*3 + 0 = 6
-					   	   	   // a = 3*3 + 0 = 9
-			}				   // a = 2*3 + 1 = 7
-			if(q >= b) {
-				q-=2;
-			}	
-			r++;
-			i = (q*b) + r;
-		}                      
-	}
-	printf("%d %d\n",q,r);
 	
+	if(a < 0) {
+		r = 0;
+		aux = b;
+		if(b < 0) aux = b*-1;
+		while(r < aux) {
+			aux2 = a - r;
+			if(aux2 % b == 0) break;
+			r++;
+		}
+		q = aux2 / b;
+		printf("%d %d\n", q, r);
+
+	}else {
+		printf("%d %d\n", a/b, a%b);
+	}
 	
 	return 0;
 }
 //conta de menos com numero negativo
 // a and b>0 there exist q and r such that a=qb+r and 0<= r < b.
-
-/*
-  
-   a && b > 0
-   a = q*b + r
-   0 <= r < b
-   
-   a = 7 , b = 3
-   q = 2, r = 1
-   a = 2*3 + 1 = 7
-   ///////////////
-   a = 1*3 + 0 = 3
-   a = 2*3 + 0 = 6
-   a = 3*3 + 0 = 9 ----
-   a = 2*3 + 1 = 7
-   ///////////////
-   ok
-   a = 7 , b = -3
-   q = -2, r = 1
-   a = -2*-3 + 1 = 7
-   ///////////////
-   a = -1*-3 + 0 = 3
-   a = -2*-3 + 0 = 6
-   a = -3*-3 + 0 = 9 ----
-   a = -2*-3 + 1 = 7
-   ///////////////
-   ok
-   a = -7 , b = 3
-   q = -3, r = 2
-   a = -3*3 + 2 = 7
-   ///////////////
-   a = -1*3 + 0 = -3
-   a = -2*3 + 0 = -6
-   a = -3*3 + 0 = -9 ---
-   a = -2*3 + 1 = -5
-   a = -2*3 + 2 = -4
-   a = -3*3 + 2 = -7
-   ///////////////
-    
-*/
+// precisa de uma maneira de calcular numeros negativos, era so
+//iterar o valor de r, ate encontrar o q necessario para uma divisão certa

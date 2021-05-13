@@ -60,7 +60,7 @@ int main () {
 	
 }
 //pedra, papel, tesoura, lagarto e Spock
-//so preciso numerar as opções
+//so preciso numerar as opï¿½ï¿½es
 //o site vai prencher as respostas
 /*
 scissors cuts paper;

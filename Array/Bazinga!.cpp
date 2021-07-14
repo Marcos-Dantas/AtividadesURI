@@ -9,7 +9,7 @@ int main () {
 	for(int i = 0; i < t; i++) {
 		scanf("%s %s", escolhaS,escolhaR);
 		if(!strcmp(escolhaS,"pedra") && !strcmp(escolhaR,"lagarto")) {
-			printf("Caso #%d: Bazinga!\n", i+1);
+			printf("Caso #%d: Bazinga!\n", i+1);		
 		}else if(!strcmp(escolhaS,"pedra") && !strcmp(escolhaR,"tesoura")) {
 			printf("Caso #%d: Bazinga!\n", i+1);
 		}else if(!strcmp(escolhaS,"pedra") && !strcmp(escolhaR,"papel")) {

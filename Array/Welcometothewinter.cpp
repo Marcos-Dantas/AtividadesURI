@@ -13,21 +13,21 @@ int main () {
         printf(":(\n");
     }else if(B > A && C > B && aux_3_2 > 0 && aux_1_2 > 0) { 
             if(aux_3_2 < aux_1_2) {
-                printf(":(");
+                printf(":(\n");
             }else { 
-                printf(":)");    
+                printf(":)\n");    
             }  
     }else if(B < A && C < B && aux_3_2 < 0 && aux_1_2 < 0) {
             if(aux_3_2 > aux_1_2) {
-                printf(":)");
+                printf(":)\n");
             }else { 
-                printf(":(");    
+                printf(":(\n");    
             }
     }else if(A == B) {
         if(C > B) {
-            printf(":)");
+            printf(":)\n");
         }else {
-            printf(":(");
+            printf(":(\n");
         }    
     }
 /*

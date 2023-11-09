@@ -1,5 +1,4 @@
 ## beecrowd | 1010
-
 line1 = input().split()
 line2 = input().split()
 
